@@ -5,7 +5,7 @@ import base64
 def generate():
   client = genai.Client(
       vertexai=True,
-      project="dcastroenrtechx25",
+      project="PROJECT_ID",
       location="us-central1",
   )
 
