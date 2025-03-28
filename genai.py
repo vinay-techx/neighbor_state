@@ -9,22 +9,9 @@ def generate():
       location="us-central1",
   )
 
-
-  model = "gemini-2.0-flash-001"
-  contents = [
-  ]
-  generate_content_config = types.GenerateContentConfig(
-    temperature = 1,
-    top_p = 0.95,
-    max_output_tokens = 8192,
-    response_modalities = ["TEXT"],
+  response = client.models.generate_content(
+      model="gemini-2.0-flash", contents="Explain how AI works in a few words"
   )
-
-  for chunk in client.models.generate_content_stream(
-    model = model,
-    contents = contents,
-    config = generate_content_config,
-    ):
-    print(chunk.text, end="")
+  print(response.text)
 
 generate()
