@@ -35,8 +35,8 @@ if state:
     neighbor_states = [row.neighbors_state for row in query_job.result()]
 
     if len(neighbor_states):
-        st.write("Neighboring states of ", state, "are:")
+        st.write(f"Neighboring states of **{state}** are:")
         for neighbor_state in neighbor_states[0]:
-            st.write(neighbor_state)
+            st.write(f"- **{neighbor_state}**")
     else:
-        st.write(state, " has no neighbors :(")
+        st.write(f"**{state}** has no neighbors 😔")
